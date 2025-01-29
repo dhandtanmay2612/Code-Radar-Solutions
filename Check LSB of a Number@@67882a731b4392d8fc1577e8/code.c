@@ -2,7 +2,7 @@
 
 int main(){
     int num;
-    scanf("%d", a);
+    scanf("%d", &a);
     if(a & 1){
         printf("Set");
     }
