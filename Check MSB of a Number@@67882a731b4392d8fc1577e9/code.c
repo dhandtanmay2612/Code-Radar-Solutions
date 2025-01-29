@@ -4,7 +4,7 @@
 int main(){
     int num;
     scanf("%d", &num);
-    if(num <= INT_MIN){
+    if((num>31) & 1){
         printf("Set\n");
     }
     else{
