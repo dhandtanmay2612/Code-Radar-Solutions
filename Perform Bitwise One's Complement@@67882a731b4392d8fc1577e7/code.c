@@ -1,8 +1,14 @@
 #include <stdio.h>
 
-int main(){
-    int a,b;
-    scanf("%d %d", &a, &b);
-    printf("%d", a=~b);
+int main() {
+    int a;
+
+    scanf("%d", &a);
+
+    // Perform bitwise one's complement
+    a = ~a;
+
+    printf("%d\n", a);
+
     return 0;
 }
