@@ -3,6 +3,6 @@
 int main(){
     int x,y;
     scanf("%d %d", &x, &y);
-    printf("greatest is: ", max(x,y));
+    (x>y) ? printf(x) : printf(y);
     return 0;
 }
