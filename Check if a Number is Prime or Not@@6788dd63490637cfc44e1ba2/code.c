@@ -3,7 +3,7 @@
 int main(){
     int x;
     scanf("%d", &x);
-    boolean isPrime=true;
+    bool isPrime=true;
     for(int i=0;i<=x;i++){
         if(i%x==0){
             isPrime=false;
