@@ -3,5 +3,17 @@
 int main(){
     int x;
     scanf("%d", &x);
-    (x%x==0 && x%1==0)?printf("Prime"):printf("Not Prime");
+    boolean isPrime=true;
+    for(int i=0;i<x;i++){
+        if(i%x==0){
+            isPrime=false;
+        }
+    }
+    if(isPrime){
+        printf("Prime");
+    }
+    else{
+        printf(Not Prime);
+    }
+
 }
