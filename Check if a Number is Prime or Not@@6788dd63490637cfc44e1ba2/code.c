@@ -2,7 +2,6 @@
 
 int main(){
     int n,i,f=0;
-    printf("enter a positive number:");
     scanf("%d", &n);
     if(n==0 || n==1)
       f=1;
