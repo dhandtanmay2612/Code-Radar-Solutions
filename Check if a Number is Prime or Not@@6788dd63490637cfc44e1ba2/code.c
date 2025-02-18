@@ -1,20 +1,22 @@
 #include<stdio.h>
-#include <stdbool.h>
 
 int main(){
-    int x;
-    scanf("%d", &x);
-    bool isPrime=true;
-    for(int i=0;i<=x;i++){
-        if(i%x==0){
-            isPrime=false;
+    int n,i,f=0;
+    printf("enter a positive number:");
+    scanf("%d", &n);
+    if(n==0 || n==1)
+      f=1;
+    for(i=2;i<=n/2;i++){
+        if(n%i==0){
+            f=1;
+            break;
         }
     }
-    if(isPrime){
+    if(f==0){
         printf("Prime");
     }
     else{
         printf("Not Prime");
     }
-
+    return 0;
 }
