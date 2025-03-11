@@ -8,12 +8,12 @@ struct Student {
 
 int main() {
     int N;
-    scanf("%d", N);
+    scanf("%d", &N);
 
     struct Student students[N]; 
 
     for (int i = 0; i < N i++) {
-        scanf("%d %s %f", &students[].rollno, students[].name, &students[].marks);
+        scanf("%d %s %f", &students[i].rollno, students[i].name, &students[i].marks);
     }
 
     float totalMarks = 0;
