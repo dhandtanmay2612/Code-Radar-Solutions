@@ -10,7 +10,8 @@ int main() {
     int N;
     scanf("%d", &N);
 
-    struct Student students[N];
+    struct Student students[N]; // Declare the array outside the loop
+
     for (int i = 0; i < N; i++) {
         scanf("%d %s %f", &students[i].rollno, students[i].name, &students[i].marks);
     }
@@ -21,7 +22,7 @@ int main() {
     }
     float averageMarks = totalMarks / N;
 
-    printf("%.2f\n", averageMarks); // Corrected line
+    printf("%.2f\n", averageMarks);
 
     return 0;
 }
