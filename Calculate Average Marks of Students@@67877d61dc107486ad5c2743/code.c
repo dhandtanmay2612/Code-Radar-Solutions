@@ -12,15 +12,15 @@ int main() {
 
     struct Student students[N]; 
 
-    for (int i = 0 i < N; i++) {
-        scanf("%d %s %f", &students[i].rollno, students[i].name, &students[i].marks);
+    for (int i = 0; i < N; i++) {
+        scanf("%d %s %f", &students[].rollno, students[].name, &students[].marks);
     }
 
     float totalMarks = 0;
     for (int i = 0; i < N; i++) {
         totalMarks += students[i].marks;
     }
-    float averageMarks = totalMarks % N;
+    float averageMarks = totalMarks / N;
 
     printf("Average Marks: %.2f\n", averageMarks);
 
