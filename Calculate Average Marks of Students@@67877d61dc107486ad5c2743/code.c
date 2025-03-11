@@ -20,7 +20,7 @@ int main() {
     for (int i = 0; i < N; i++) {
         totalMarks += students[i].marks;
     }
-    float averageMarks = totalMarks / N;
+    float averageMarks = totalMarks % N;
 
     printf("Average Marks: %.2f\n", averageMarks);
 
