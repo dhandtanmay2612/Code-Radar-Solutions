@@ -29,7 +29,7 @@ int main() {
         }
     }
 
-    printf("Number of students scoring above the threshold: %d\n", count);
+    printf("Count of students scoring above %d\n:", count);
 
     return 0;
 }
