@@ -25,7 +25,7 @@ int main() {
         }
     }
 
-    printf("%d\n", count);
+    printf("%d\n", count); // Corrected line
 
     return 0;
 }
