@@ -22,7 +22,7 @@ int main() {
     }
     float averageMarks = totalMarks / N;
 
-    printf("%.2f\n", averageMarks);
+    printf("Average Marks: %.2f\n", averageMarks);
 
     return 0;
 }
