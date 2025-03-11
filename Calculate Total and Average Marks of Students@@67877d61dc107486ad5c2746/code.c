@@ -10,7 +10,7 @@ int main(){
     float marks=0;
     struct student students[n];
     for(int i=0;i<n;i++){
-        scanf("%d %s %f",&students[i].rollNumber,&students[i].name,&students[i].marks);
+        scanf("%d %s %f",&students[].rollNumber,&students[].name,&students[].marks);
     }
     for(int i=0;i<n;i++){
         marks=marks+students[i].marks;
