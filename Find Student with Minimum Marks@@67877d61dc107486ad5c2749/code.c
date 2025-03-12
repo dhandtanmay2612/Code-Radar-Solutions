@@ -1,26 +1,34 @@
-#include<stdio.h>
-struct student{
+#include <iostream>
+#include <string>
+#include <vector>
+#include <limits>
+
+using namespace std;
+
+struct Student {
     int rollNumber;
-    char name[50];
-    float marks;
+    string name;
+    double marks;
 };
-int main(){
+
+int main() {
     int n;
-    scanf("%d",&n);
-    struct student students[n];
-    int count=0;
-    int a=0;
-    
-    for(int i=0;i<n;i++){
-        scanf("%d %s %f",&students[i].rollNumber,&students[i].name,&students[i].marks);
+    cin >> n;
+
+    vector<Student> students(n);
+    for (int i = 0; i < n; ++i) {
+        cin >> students[i].rollNumber >> students[i].name >> students[i].marks;
     }
-    float threshold;
-    scanf("%f",&threshold);
-    for(int i=0;i<n;i++){
-        if(students[i].marks>threshold){
-            count++;    
+
+    int minIndex = 0;
+    for (int i = 1; i < n; ++i) {
+        if (students[i].marks < students[minIndex].marks) {
+            minIndex = i;
         }
-        
     }
-    printf("Count of students scoring above %.2f: %d",threshold,count);
+
+    cout << "Student with Minimum Marks: Roll Number: " << students[minIndex].rollNumber
+         << ", Name: " << students[minIndex].name << ", Marks: " << students[minIndex].marks << endl;
+
+    return 0;
 }
