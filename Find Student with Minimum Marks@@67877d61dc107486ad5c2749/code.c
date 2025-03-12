@@ -1,19 +1,19 @@
 #include <stdio.h>
-using namespace std;
+#include <string.h>
 
 struct Student {
     int rollNumber;
-    string name;
-    double marks;
+    char name[100];
+    float marks;
 };
 
 int main() {
     int n;
-    cin >> n;
+    scanf("%d", &n);
 
-    vector<Student> students(n);
+    struct Student students[n];
     for (int i = 0; i < n; ++i) {
-        cin >> students[i].rollNumber >> students[i].name >> students[i].marks;
+        scanf("%d %s %f", &students[i].rollNumber, students[i].name, &students[i].marks);
     }
 
     int minIndex = 0;
@@ -23,8 +23,8 @@ int main() {
         }
     }
 
-    cout << "Student with Minimum Marks: Roll Number: " << students[minIndex].rollNumber
-         << ", Name: " << students[minIndex].name << ", Marks: " << students[minIndex].marks << endl;
+    printf("Student with Minimum Marks: Roll Number: %d, Name: %s, Marks: %.2f\n",
+           students[minIndex].rollNumber, students[minIndex].name, students[minIndex].marks);
 
     return 0;
 }
