@@ -1,8 +1,4 @@
 #include <stdio.h>
-#include <string>
-#include <vector>
-#include <limits>
-
 using namespace std;
 
 struct Student {
