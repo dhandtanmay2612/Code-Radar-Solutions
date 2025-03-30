@@ -1,22 +1,18 @@
 #include <stdio.h>
 
-int main() {
-    int n;
-    scanf("%d", &n);
+int main(){
+    int rows,i,j,space;
+    scanf("%d", &rows);
 
-    for (int i = 1; i <= n; i++) {
-        // Print spaces for indentation
-        for (int j = 1; j <= n - i; j++) {
+    for(int i=1;i<=rows;i++){
+        for(space=1;space=rows - i;space++){
             printf(" ");
         }
-
-        // Print stars
-        for (int k = 1; k <= 2 * i - 1; k++) {
+        for(int j=1;j=2*rows-i;j++){
             printf("*");
         }
-
         printf("\n");
     }
 
-    return 0;
 }
+
