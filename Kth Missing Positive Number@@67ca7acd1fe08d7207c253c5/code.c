@@ -1,23 +1,39 @@
 #include <stdio.h>
 
-int findKthMissing(int arr[], int n, int k) {
-    int missingCount = 0; // Counter for missing positive numbers
-    int current = 1; // Start checking from the first positive number
-    int index = 0; // Index for the input array
+int findKthMissingPositive(int arr[], int n, int k) {
+    int missingCount = 0;
+    int current = 1;
+    int index = 0;
 
     while (missingCount < k) {
-        // If current number is in the array, skip it
         if (index < n && arr[index] == current) {
             index++;
         } else {
-            // If current number is missing
             missingCount++;
             if (missingCount == k) {
-                return current; // Return the Kth missing positive number
+                return current;
             }
         }
-        current++; // Check the next positive number
+        current++;
     }
 
-    return -1; // Just in case we did not find the Kth missing number
+    return -1;
+}
+
+int main() {
+    int n, k;
+
+    scanf("%d", &n);
+    int arr[n];
+
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    scanf("%d", &k);
+
+    int result = findKthMissingPositive(arr, n, k);
+    printf("%d\n", result);
+
+    return 0;
 }
