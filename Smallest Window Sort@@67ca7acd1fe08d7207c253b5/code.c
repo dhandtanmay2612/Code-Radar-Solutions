@@ -1,63 +1,55 @@
 #include <stdio.h>
 #include <limits.h>
 
-void smallestWindowSort(int arr[], int n, int *m, int *n) {
-    int left = 0, right = n - 1;
+// Function to find the smallest window to sort
+void smallestWindowSort(int arr[], int n) {
+    int start = -1, end = -1;
 
-    // Find the left boundary
-    while (left < n - 1 && arr[left] <= arr[left + 1]) {
-        left++;
+    // Find the first element that is out of order
+    for (int i = 0; i < n - 1; i++) {
+        if (arr[i] > arr[i + 1]) {
+            start = i;
+            break;
+        }
     }
 
-    // Find the right boundary
-    while (right > 0 && arr[right] >= arr[right - 1]) {
-        right--;
-    }
-
-    // If the array is already sorted
-    if (left == n - 1) {
-        *m = -1;
-        *n = -1;
+    // If the array is already sorted, return
+    if (start == -1) {
+        printf("Array is already sorted\n");
         return;
     }
 
-    // Find the minimum and maximum within the unsorted range
-    int minVal = INT_MAX, maxVal = INT_MIN;
-    for (int i = left; i <= right; i++) {
-        if (arr[i] < minVal) {
-            minVal = arr[i];
-        }
-        if (arr[i] > maxVal) {
-            maxVal = arr[i];
+    // Find the last element that is out of order
+    for (int i = n - 1; i > 0; i--) {
+        if (arr[i] < arr[i - 1]) {
+            end = i;
+            break;
         }
     }
 
-    // Extend the left boundary
-    while (left > 0 && arr[left - 1] > minVal) {
-        left--;
+    // Find the minimum and maximum in the subarray
+    int min_val = INT_MAX, max_val = INT_MIN;
+    for (int i = start; i <= end; i++) {
+        if (arr[i] < min_val) min_val = arr[i];
+        if (arr[i] > max_val) max_val = arr[i];
     }
 
-    // Extend the right boundary
-    while (right < n - 1 && arr[right + 1] < maxVal) {
-        right++;
+    // Extend the window if necessary
+    while (start >= 0 && arr[start] > min_val) {
+        start--;
+    }
+    while (end < n && arr[end] < max_val) {
+        end++;
     }
 
-    *m = left;
-    *n = right;
+    // Output the result
+    printf("Smallest window to sort: [%d, %d]\n", start + 1, end - 1);
 }
 
 int main() {
-    int arr[] = {1, 2, 5, 3, 7, 10, 9, 12};
+    int arr[] = {1, 3, 5, 2, 6, 4, 8, 7};
     int n = sizeof(arr) / sizeof(arr[0]);
-    int m, n_val;
 
-    smallestWindowSort(arr, n, &m, &n_val);
-
-    if (m == -1 && n_val == -1) {
-        printf("Array is already sorted.\n");
-    } else {
-        printf("Smallest window to sort: [%d, %d]\n", m, n_val);
-    }
-
+    smallestWindowSort(arr, n);
     return 0;
 }
