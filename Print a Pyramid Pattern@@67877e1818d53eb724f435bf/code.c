@@ -10,7 +10,7 @@ int main() {
             printf(" ");
         }
         // Print stars
-        for (j = 0; j <= 2 * i; j++) {
+        for (j = 0; j <= 2 * i - 1; j++) {
             printf("*");
 
         }
