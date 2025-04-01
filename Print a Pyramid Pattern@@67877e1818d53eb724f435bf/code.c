@@ -12,9 +12,7 @@ int main() {
         // Print stars
         for (j = 0; j <= 2 * i; j++) {
             printf("*");
-            if (j < 2 * i) { // Avoid printing an extra space after the last star
-                printf(" ");
-            }
+
         }
         // Move to the next line after each row
         printf("\n");
