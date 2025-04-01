@@ -1,7 +1,7 @@
 #include<stdio.h>
 int isPrime(int num){
     int i,count=0;
-    for(i=1;i<=n;i++){
+    for(i=1;i<=num;i++){
         if(num%1==0){
             count++;
         }
